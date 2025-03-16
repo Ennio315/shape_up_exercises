@@ -29,6 +29,6 @@ aside a { color: steelblue; }
 
 aside a:hover, aside a:focus { color: maroon; }
 
-footer { font-size: 100%;
+footer { font-size: 75%;
         text-align: center;
        }
