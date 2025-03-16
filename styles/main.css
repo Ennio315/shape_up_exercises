@@ -5,7 +5,7 @@ body {
 a { font-weight: bold; 
   }
 
-h1 { font-size: 200%; }
+h1 { font-size: 300%; }
 
 header h1 { color: steelblue;
            font-style: italic;
@@ -15,7 +15,7 @@ header img { float: left; }
 
 header h1 { text-indent: 30px; }
 
-header h3 { text-indent: 30px; }
+header h3 { text-indent: 50px; }
 
 section a { color: maroon; }
 
@@ -29,6 +29,6 @@ aside a { color: steelblue; }
 
 aside a:hover, aside a:focus { color: maroon; }
 
-footer { font-size: 50%;
+footer { font-size: 100%;
         text-align: center;
        }
