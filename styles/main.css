@@ -13,9 +13,9 @@ header h1 { color: steelblue;
 
 header img { float: left; }
 
-header h1 { text-indent: 30px; }
+header h1 { text-indent: 20px; }
 
-header h3 { text-indent: 50px; }
+header h2 { text-indent: 20px; }
 
 section a { color: maroon; }
 
