@@ -9,8 +9,9 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    width: 700px;
-    border: 3px solid steelblue ;
+    width: 100%;
+    
+  /*  border: 3px solid steelblue ; */
     box-shadow: 0 0 50px black;
     margin: 0 auto;
   }
@@ -37,6 +38,7 @@ header img {
     float: left;
     height: 6em;
     padding-left: 1em;
+    width: clamp(100px, 100%, 120px);
  }
   
 header h1 { 
@@ -55,8 +57,17 @@ section a { color: maroon; }
   
 section a:hover, section a:focus { color: steelblue }
 
+section {
+    flex-basis: 75%;
+    margin: 0 1em; 
+    flex-grow: 2;
+}
+
+
 main { 
     margin: 1em; 
+    display: flex;
+
 }
 
 section h1, h2, h3 {
@@ -70,6 +81,9 @@ section p:last-child { padding-bottom: 1em; }
 aside { 
     border: 3px solid steelblue;
     border-radius: 20px 20px 20px 20px ;
+    flex-basis: 25%;
+    margin: 0 1em;
+    height: fit-content;
 }
   
   aside h1 { 
@@ -82,12 +96,15 @@ aside {
   
 aside ul { 
     line-height: 1.5;
+    padding-right: 5em;
+    box-sizing: border-box;
 }
 
 aside li { 
     padding: .1em 0; 
     margin-left: 2.5em;
-
+    box-sizing: border-box;
+   
 }
 
 aside li:last-child { padding-bottom: 1em;}
@@ -103,4 +120,60 @@ footer {
         color: white;
         padding: 1.5em 0;
         margin-top: 2em;
+}
+
+.navbar {
+        background-color: steelblue;
+        color: white;
+
+        & ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        & a {
+            display: block;
+            padding: .25em 1em;
+            margin: .25em;
+            text-decoration: none;
+            color: white;
+        }
+
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.menu li:has(.submenu) {
+    position: relative;
+
+    & small {
+        margin-left: .25em;
+    }
+    &:hover > .submenu {
+        display: block; 
+    }
+}
+
+.submenu {
+    color: white;
+    position: absolute;
+    left: 0;
+    background-color: steelblue;
+    color: white;
+    display: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.current {
+    border: 2px solid white;
+    border-radius: 5px;
 }
