@@ -67,6 +67,7 @@ section {
 main { 
     margin: 1em; 
     display: flex;
+    flex-direction: column;
 
 }
 
@@ -123,7 +124,7 @@ footer {
 }
 
 .navbar {
-        background-color: steelblue;
+   /*     background-color: steelblue;
         color: white;
 
         & ul {
@@ -138,20 +139,43 @@ footer {
             margin: .25em;
             text-decoration: none;
             color: white;
-        }
+        }   */
+        clear: left;
+	position: relative;
+	background-color: steelblue;
+	& a {
+		display: block;
+		padding: 1em;
+		text-decoration: none;
+		margin: 1px 2px 2px 1px;
+	}
+	& a:link, a:visited { 
+		color: white;
+	}
+	& a:hover, a:focus, a.current {
+		background-color: steelblue;
+		color: white;
+	}
+	& ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
 
 }
 
 .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    
+    position: absolute;
+    left: 0;
+    background-color: steelblue;
+    display: none;
 }
 
 .menu li:has(.submenu) {
     position: relative;
-
+    & small::after {
+		content: "\25b6";
+	}
     & small {
         margin-left: .25em;
     }
@@ -160,14 +184,40 @@ footer {
     }
 }
 
+/* Set the submenu details for mobile navbar */
 .submenu {
-    color: white;
     position: absolute;
-    left: 0;
-    background-color: steelblue;
-    color: white;
+	left: 100%;
+	width: 100%;
+	top: 0;
+	background-color: steelblue;
+	color: white;
     display: none;
+    & > li a { margin: 2px; }
+    & small { margin-left: .5em; }
 }
+
+/* CheckBox */
+#checkbox-toggle { display: none;}
+
+.menu-btn {
+	display: block;
+	padding: 0 .25em 1em;
+	color: var(--dark_menu);
+	font-size: 24px;
+}
+
+.menu-btn::after { content: "\2630"; }
+
+#checkbox-toggle:checked ~ .menu {
+	display: block;
+}
+
+#checkbox-toggle:checked ~ .menu-btn::after {
+	content: "\2716";
+}
+
+
 
 a:hover {
     text-decoration: underline;
@@ -176,4 +226,73 @@ a:hover {
 .current {
     border: 2px solid white;
     border-radius: 5px;
+}
+
+@media only screen and (min-width: 748px) {
+
+    .menu {
+        display: flex;
+        position: relative;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .menu-btn {
+		display: none;
+	}
+
+    .menu li:has(.submenu) small::after {
+		content: "\25bc" ;
+	}
+
+    .submenu {
+        color: white;
+        position: absolute;
+        left: 0;
+        background-color: steelblue;
+        color: white;
+        display: none;
+        top: auto;
+    }
+
+    .navbar {
+        background-color: steelblue;
+        color: white;
+        width: 100%;
+        margin-bottom: 2em;
+
+        & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        & a {
+        display: block;
+        padding: .25em 1em;
+        margin: .25em;
+        text-decoration: none;
+        color: white;
+        } 
+}
+   
+
+    #checkbox-toggle:checked ~ .menu { display: flex; }
+
+}
+
+@media only screen and (min-width: 662px) {
+    main { 
+        margin: 1em; 
+        display: flex;
+        flex-direction: row;
+    }
+
+    section {
+        flex-basis: 75%;
+    }
+
+    aside {
+        flex-basis: 25%;
+    }
 }
