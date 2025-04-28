@@ -27,6 +27,8 @@ header {
     border-bottom: 3px solid steelblue;
 }
 
+h3 { color: brown}
+
 
   
 header h1 { color: steelblue;
@@ -63,6 +65,14 @@ section {
     flex-grow: 2;
 }
 
+section ul {
+    padding-left: 2em;
+    & li {
+        padding: .25em 0;
+    }
+
+}
+
 
 main { 
     margin: 1em; 
@@ -85,6 +95,8 @@ aside {
     flex-basis: 25%;
     margin: 0 1em;
     height: fit-content;
+    min-width: fit-content;
+
 }
   
   aside h1 { 
@@ -93,17 +105,21 @@ aside {
     margin-top: .5em;
     margin-bottom: .25em;
     
+    
 }
   
 aside ul { 
     line-height: 1.5;
+    padding-left: 1.75em;
+    
     padding-right: 5em;
     box-sizing: border-box;
+    list-style-type: none;
+   
 }
 
 aside li { 
-    padding: .1em 0; 
-    margin-left: 2.5em;
+    margin-right: 1em;
     box-sizing: border-box;
    
 }
