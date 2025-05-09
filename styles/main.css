@@ -432,7 +432,7 @@ tr th:first-of-type {
    
 }
 
-@media only screen and (max-width: 662px) {
+@media only screen and (max-width: 748px) {
     th, td { 
         display: block; 
         padding-left: .5em;
