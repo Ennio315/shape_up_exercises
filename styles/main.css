@@ -12,6 +12,13 @@
 section .fig-table-width {
     box-sizing: border-box !important;
     width: 80%;
+
+    & figcaption {
+        font-weight: bolder;
+        font-size: x-large;
+        text-align: center;
+        padding-bottom: .25em;
+    }
 }
 
 
