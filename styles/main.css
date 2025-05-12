@@ -338,6 +338,64 @@ tr th:first-of-type {
     text-align: center;
 }
 
+form {
+	& label {
+		display: block;
+	}
+	& input, select {
+		width: 100%;
+		padding: .5em;
+		margin-bottom: .5em;
+		border-radius: 5px;
+	}
+	& fieldset {
+		padding: .5em 1em .75em;
+		margin-bottom: 1em;
+		border: 1px solid black;
+		border-radius: 10px;
+        & div { 
+            display: inline-block;
+        }
+	}
+	& legend {
+        color: maroon;
+		font-weight: bold;
+		padding: 0 .1em;
+	}
+
+    & textarea {
+        height: 10em;
+        width: 100%;
+    }
+
+    & input[type="radio"], input[type="checkbox"] { 
+        margin-right: .5em;
+        float: left;
+    }
+
+    
+
+}
+
+button {
+    font-weight: bold;
+    width: 10em;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 6px;
+    padding: .5em;
+    margin-bottom: 1em;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+.submit-button { background-color: steelblue;}
+.reset-button { background-color: maroon;}
+
+input:required { border: 2px solid red;}
+
 
 @media only screen and (min-width: 748px) {
 
