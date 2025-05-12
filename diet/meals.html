@@ -73,8 +73,11 @@
 					<input type="text" id="width" name="width" placeholder="Example: 145lb" required>
 
 					<label for="age">Age</label>
-					<input type="text" id="age" min="18" max="100" value="18">
-					</fieldset>    
+					<input type="number"  id="age" min="18" max="100" value="18" placeholder="Select your Age">
+					
+					
+				
+				</fieldset>    
 
 					<fieldset class="right">
 						<legend>Lifestyle and goals</legend>
@@ -83,31 +86,31 @@
 						<div>
 						<input type="radio" name="active" id="active" value="active">
 						<label for="active">Active</label>
-						
+						</div>
 
-						
+					<div>
 						<input type="radio" name="moderate" id="moderate" value="moderate">
 						<label for="moderate">Moderate</label>
+					</div>
 						
-						
-						
+					<div>
 						<input type="radio" name="sedentary" id="sedentary" value="sedentary">
 						<label for="sedentary" checked>Sedentary</label>
-						</div>
+					</div>
 
 						<p>What are your weight goals?</p>
 						
-						<div>
+					<div>
 						<input type="radio" name="gain" id="gain" value="gain">
 						<label for="gain">Gain</label>
+					</div>
 						
-						
-						
+					<div>	
 						<input type="radio" name="loss" id="loss" value="loss">
 						<label for="loss">Loss</label>
-					
+					</div>
 
-						
+					<div>
 						<input type="radio" name="maintain" id="maintain" value="maintain">
 						<label for="maintain" checked>Maintain</label>
 					</div>
@@ -121,24 +124,30 @@
 						<div>
 						<input type="checkbox" name="vegetarian" id="vegetarian" value="vegetarian">
 						<label for="vegetarian">Vegetarian</label>
-					
+						</div>
+						
+						<div>
 						<input type="checkbox" name="gluten-free" id="gluten-free" value="gluten-free">
 						<label for="gluten-free">Gluten-Free</label>
-					
+					</div>
+
+					<div>
 						<input type="checkbox" name="kosher" id="kosher" value="kosher">
 						<label for="kosher" >Kosher</label>
-					
+					</div>
+					<div>
 						<input type="checkbox" name="low-salt" id="low-salt" value="low-salt">
 						<label for="low-salt" >Low salt</label>
-					
-						<input type="other" name="other" id="other" value="other">
+					</div>
+					<div>
+						<input  type="checkbox" name="other" id="other" value="other">
 						<label for="other">Other, please explain:</label>
 						<textarea id="other"></textarea>
 					</div>
-					
+					<div>
 						<button type="submit" class="submit-button">Submit</button>
 						<button type="reset" class="reset-button">Reset</button>
-					
+					</div>
 
 					</fieldset>
 			</form>
@@ -154,7 +163,7 @@
 			</ul>
 		</aside>
 	</main>
-	<footer>
+	<footer> 
 		<p>&copy; Shape Up!</p>
 	</footer>
 </body>
