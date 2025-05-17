@@ -292,7 +292,11 @@ a:hover {
     }
 }
 
-article { display: inline-block;}
+article { 
+    display: inline-block;
+    & video { width: 90%;}
+    & audio { width: 90%;}
+}
 
 .maroon {
     color: maroon;
