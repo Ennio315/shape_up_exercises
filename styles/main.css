@@ -24,6 +24,14 @@ section .fig-table-width {
 
 
 body {
+    display: grid;
+    grid-template-rows: repeat(4,auto);
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "head"
+        "navi"
+        "main"
+        "foot";
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     
@@ -38,6 +46,7 @@ body {
   h1 { font-size: 175%; }
 
 header { 
+    grid-area: head;
     padding-bottom: 1.5em;
     background-image: linear-gradient(to bottom, white 0%, steelblue 200%); 
     border-bottom: 3px solid steelblue;
@@ -79,9 +88,10 @@ section a { color: maroon; }
 section a:hover, section a:focus { color: steelblue }
 
 section {
+    grid-area: sec;
     flex-basis: 75%;
     margin: 0 1em; 
-    flex-grow: 2;
+  /*  flex-grow: 2; */
 }
 
 
@@ -107,9 +117,16 @@ li img {
 article h2 { color: maroon; }
 
 main { 
+    grid-area: main;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "sec"
+        "asi";
     margin: 1em; 
-    display: flex;
-    flex-direction: column;
+   
+  
 }
 
 section h1, h2, h3 {
@@ -121,9 +138,10 @@ section p { padding-bottom: .5em; }
 section p:last-child { padding-bottom: 1em; }
 
 aside { 
+    grid-area: asi;
     border: 3px solid steelblue;
     border-radius: 20px 20px 20px 20px ;
-    flex-basis: 25%;
+    
     margin: 0 1em;
     height: fit-content;
     min-width: fit-content;
@@ -162,6 +180,7 @@ aside a { color: steelblue; }
 aside a:hover, aside a:focus { color: maroon; }
   
 footer { 
+        grid-area: foot;
         font-size: 85%;
         text-align: center;
         background-color: steelblue;
@@ -187,6 +206,7 @@ footer {
             text-decoration: none;
             color: white;
         }   */
+        grid-area: navi;
         clear: left;
 	position: relative;
 	background-color: steelblue;
@@ -293,7 +313,7 @@ a:hover {
 }
 
 article { 
-    display: inline-block;
+    grid-area: sec;
     & video { width: 90%;}
     & audio { width: 90%;}
 }
@@ -427,11 +447,18 @@ input:valid {border: 1px solid black;}
 
 @media only screen and (min-width: 748px) {
 
+    main {
+        grid-row: auto;
+        grid-template-columns: 1fr 35%;
+        grid-template-areas: "sec asi";
+    }
+
     .menu {
-        display: flex;
+        display: grid;
         position: relative;
+        grid-template: auto / repeat(5, auto);
         justify-content: space-evenly;
-        width: 100%;
+        
     }
 
     .menu-btn {
@@ -496,13 +523,13 @@ input:valid {border: 1px solid black;}
 
 @media only screen and (min-width: 662px) {
     main { 
-        margin: 1em; 
-        display: flex;
-        flex-direction: row;
+         grid-row: auto;
+        grid-template-columns: 1fr 35%;
+        grid-template-areas: "sec asi";
     }
 
     section {
-        flex-basis: 75%;
+        grid-area: sec;
     }
 
     figure {
@@ -510,7 +537,7 @@ input:valid {border: 1px solid black;}
         box-sizing: content-box;}
 
     aside {
-        flex-basis: 25%;
+        grid-area: asi;
     }
 
     .padding { 
